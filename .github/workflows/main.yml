@@ -1,0 +1,30 @@
+name: Unknown Man Android APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Unity Android
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: auto
+          targetPlatform: Android
+          androidExportType: androidPackage
+          buildName: UnknownMan
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: UnknownMan-APK
+          path: build/Android/*.apk
