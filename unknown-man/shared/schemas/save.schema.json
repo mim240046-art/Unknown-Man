@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unknownman:schema/save/v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "buildVersion",
+    "platform",
+    "worldIdentity",
+    "timestamp",
+    "payload"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "buildVersion": {
+      "type": "string"
+    },
+    "platform": {
+      "enum": [
+        "java",
+        "bedrock"
+      ]
+    },
+    "worldIdentity": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "currentDay",
+        "storyFlags",
+        "evidenceIds",
+        "puzzleStates",
+        "unlockedLocationIds",
+        "monsterForm",
+        "monsterState",
+        "endingRequirements"
+      ],
+      "properties": {
+        "currentDay": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "storyFlags": {
+          "type": "object"
+        },
+        "evidenceIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "puzzleStates": {
+          "type": "object"
+        },
+        "unlockedLocationIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "monsterForm": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "monsterState": {
+          "type": "string"
+        },
+        "endingRequirements": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

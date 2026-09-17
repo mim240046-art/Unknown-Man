@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unknownman:schema/anomaly/v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "mode",
+          "trigger",
+          "locationId",
+          "probability",
+          "cooldownSeconds",
+          "minDay",
+          "maxDay",
+          "minDistance",
+          "maxDistance",
+          "soundId",
+          "visualEffectId",
+          "consequenceId",
+          "canAffectCriticalContent"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^unknownman:anomaly/[a-z0-9_/-]+$"
+          },
+          "mode": {
+            "enum": [
+              "scripted",
+              "random"
+            ]
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "locationId": {
+            "type": "string"
+          },
+          "probability": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "cooldownSeconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minDay": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "maxDay": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "minDistance": {
+            "type": "number",
+            "minimum": 0
+          },
+          "maxDistance": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "soundId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "visualEffectId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "consequenceId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "canAffectCriticalContent": {
+            "const": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

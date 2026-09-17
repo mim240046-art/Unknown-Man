@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "unknownman:puzzle/records_room_latch",
+      "requirements": [
+        "unknownman:evidence/arrival_diary"
+      ],
+      "clues": [
+        "unknownman:clue/diary_margin_symbols"
+      ],
+      "initialState": "locked",
+      "solution": {
+        "type": "symbol_sequence",
+        "sequence": [
+          "well",
+          "bell",
+          "tree"
+        ]
+      },
+      "failureBehavior": "partial_reset",
+      "rewards": [
+        "unknownman:location/records_room"
+      ],
+      "storyConsequences": [
+        "unknownman:flag/records_room_open"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "unknownman:evidence/arrival_diary",
+      "titleKey": "evidence.arrival_diary.title",
+      "type": "diary",
+      "locationId": "unknownman:location/safe_house",
+      "dayAvailable": 1,
+      "descriptionKey": "evidence.arrival_diary.description",
+      "relatedEvidence": [
+        "unknownman:evidence/missing_person_token"
+      ],
+      "storyTags": [
+        "arrival",
+        "disappearance"
+      ],
+      "secret": false,
+      "critical": true
+    },
+    {
+      "id": "unknownman:evidence/missing_person_token",
+      "titleKey": "evidence.missing_person_token.title",
+      "type": "object",
+      "locationId": "unknownman:location/village_well",
+      "dayAvailable": 1,
+      "descriptionKey": "evidence.missing_person_token.description",
+      "relatedEvidence": [
+        "unknownman:evidence/arrival_diary"
+      ],
+      "storyTags": [
+        "disappearance"
+      ],
+      "secret": false,
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "entries": [
+    {
+      "id": "unknownman:anomaly/safe_house_door",
+      "mode": "scripted",
+      "trigger": "unknownman:trigger/after_first_evidence",
+      "locationId": "unknownman:location/safe_house",
+      "probability": 1.0,
+      "cooldownSeconds": 600,
+      "minDay": 1,
+      "maxDay": 1,
+      "minDistance": 5,
+      "maxDistance": 24,
+      "soundId": "unknownman:sound/door_slow",
+      "visualEffectId": null,
+      "consequenceId": "unknownman:consequence/mark_door_seen",
+      "canAffectCriticalContent": false
+    },
+    {
+      "id": "unknownman:anomaly/distant_empty_room_sound",
+      "mode": "random",
+      "trigger": "unknownman:trigger/player_near_house",
+      "locationId": "unknownman:location/village_quarter",
+      "probability": 0.18,
+      "cooldownSeconds": 180,
+      "minDay": 1,
+      "maxDay": 7,
+      "minDistance": 8,
+      "maxDistance": 40,
+      "soundId": "unknownman:sound/empty_room_knock",
+      "visualEffectId": null,
+      "consequenceId": null,
+      "canAffectCriticalContent": false
+    }
+  ]
+}

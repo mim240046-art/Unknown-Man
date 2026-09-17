@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unknownman:schema/puzzle/v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "requirements",
+          "clues",
+          "initialState",
+          "solution",
+          "failureBehavior",
+          "rewards",
+          "storyConsequences"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^unknownman:puzzle/[a-z0-9_/-]+$"
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "clues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "initialState": {
+            "type": "string"
+          },
+          "solution": {
+            "type": "object"
+          },
+          "failureBehavior": {
+            "enum": [
+              "reset",
+              "partial_reset",
+              "safe_lockout",
+              "no_penalty"
+            ]
+          },
+          "rewards": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "storyConsequences": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

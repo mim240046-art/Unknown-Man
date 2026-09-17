@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "dayDurationMinutes": 70,
+  "ai": {
+    "fastHz": 8,
+    "mediumHz": 3,
+    "slowHz": 0.75,
+    "maxVisionDistance": 64,
+    "hearingMultiplier": 1.0
+  },
+  "anomalies": {
+    "maxActive": 2,
+    "globalCooldownSeconds": 45
+  },
+  "survival": {
+    "staminaDrainPerSecond": 1.2,
+    "sleepPressurePerMinute": 0.8
+  },
+  "performance": {
+    "maxActiveMonsterEntities": 1,
+    "maxParticlesNear": 160,
+    "maxPositionalSounds": 12
+  }
+}

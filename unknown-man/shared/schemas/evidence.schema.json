@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unknownman:schema/evidence/v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "titleKey",
+          "type",
+          "locationId",
+          "dayAvailable",
+          "descriptionKey",
+          "relatedEvidence",
+          "storyTags",
+          "secret",
+          "critical"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^unknownman:evidence/[a-z0-9_/-]+$"
+          },
+          "titleKey": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "diary",
+              "letter",
+              "photograph",
+              "recording",
+              "symbol",
+              "object",
+              "npc_statement",
+              "environmental"
+            ]
+          },
+          "locationId": {
+            "type": "string"
+          },
+          "dayAvailable": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "descriptionKey": {
+            "type": "string"
+          },
+          "relatedEvidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "storyTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "secret": {
+            "type": "boolean"
+          },
+          "critical": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
