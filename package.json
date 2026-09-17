@@ -1,0 +1,19 @@
+{
+  "name": "unknown-man-production",
+  "private": true,
+  "version": "0.1.1",
+  "type": "module",
+  "scripts": {
+    "validate": "node tools/schema-validator/src/cli.mjs shared/content",
+    "test": "node --test tools/schema-validator/test/*.test.mjs tools/java-compiler/test/*.test.mjs",
+    "check:bedrock": "tsc -p bedrock/tsconfig.json --noEmit",
+    "check:java": "node tools/java-compiler/src/compile.mjs",
+    "check": "npm run validate && npm test && npm run check:bedrock && npm run check:java"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
